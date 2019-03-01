@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>淘票票</title>
+  <script type="text/javascript">
+      (function (doc, win) {
+          var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+              var clientWidth = docEl.clientWidth;
+              if (!clientWidth) return;     
+              docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+            };
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+      })(document, window);
+  </script>
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_997386_7f8ytr52jw9.css">
+</head>
+<body>
+  <div id='root'></div>
+</body>
+</html>

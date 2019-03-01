@@ -1,0 +1,21 @@
+@mixin layout($direction, $mainAxis, $crossAxis) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $mainAxis;
+  @if $crossAxis {
+    align-items: $crossAxis;
+  }
+}
+
+@each $direction in row, column {
+  @each $mainAxisName, $mainAxis in (center: center, start: flex-start, end: flex-end, between: space-between, around:space-around) {
+    .#{$direction}-#{$mainAxisName} {
+      @include layout($direction, $mainAxis, null);
+    }
+    @each $crossAxisName, $crossAxis in (center: center, start: flex-start, end: flex-end, between: space-between, around:space-around) {
+      .#{$direction}-#{$mainAxisName}-#{$crossAxisName} {
+        @include layout($direction, $mainAxis, $crossAxis);
+      }
+    }
+  }
+}

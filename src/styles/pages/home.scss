@@ -1,0 +1,73 @@
+.home-page {
+  background: #fff;
+  .home-header {
+    height: 0.95rem;
+    background: #fff;
+    padding: 0 0.3rem;
+    .app-city {
+      background-image: url(https://gw.alicdn.com/tfs/TB1mKkzl9zqK1RjSZFpXXakSXXa-50-50.svg);
+      background-size: 0.56rem 0.56rem;
+      background-repeat: no-repeat;
+      background-position: 0 0.2rem;
+      height: 100%;
+      width: 40%;
+      padding-left: 0.7rem;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      .city-name {
+        font-size: 15px;
+        font-weight: bold;
+      }
+      .arrow-down {
+        position: relative;
+        width: 0.2rem;
+        height: 100%;
+        &::after {
+          content: ' ';
+          position: absolute;
+          right: 0;
+          top: 0.45rem;
+          width: 0;
+          height: 0;
+          border-left: 4px solid transparent;
+          border-right: 4px solid transparent;
+          border-top: 4px solid #333;
+          display: block;
+        }
+      }
+    }
+    .home-header-tab {
+      height: 100%;
+      .tab-item {
+        font-size: 16px;
+        text-decoration: none;
+        width: 1.8rem;
+        position: relative;
+        color: $grey-color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+      }
+      .active {
+        font-weight: bold;
+        color: $primary-color;
+        position: relative;
+        &::after {
+          content: ' ';
+          position: absolute;
+          bottom: 0.1rem;
+          left: 0.7rem;
+          height: 2px;
+          background-color: $primary-color;
+          width: 0.4rem;
+        }
+      }
+    }
+  }
+}
